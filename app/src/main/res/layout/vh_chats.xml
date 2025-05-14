@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/swipe_reveal_container"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/color_accent_main"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_reveal_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/img_swipe_reveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/archive"
+            app:layout_constraintBottom_toTopOf="@id/guideline_reveal_container"
+            app:layout_constraintLeft_toLeftOf="@id/txt_swipe_reveal"
+            app:layout_constraintRight_toRightOf="@id/txt_swipe_reveal" />
+
+        <TextView
+            android:id="@+id/txt_swipe_reveal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="@string/chat_swipe_to_archive"
+            android:textColor="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_reveal_container" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="78dp"
+        android:background="@color/white"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_user_avatar_container"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="58dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_user_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/chat_user_avatar_description"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_user_avatar_voip_container"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="10dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            app:layout_constraintRight_toRightOf="@id/img_user_avatar_container">
+
+            <ImageView
+                android:id="@+id/img_user_voip_badge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/chat_is_voip"
+                android:src="@drawable/voip"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/txt_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:paddingStart="0dp"
+            android:paddingEnd="5dp"
+            android:text="@string/chat_user_name_placeholder"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toRightOf="@id/img_user_avatar_container"
+            app:layout_constraintRight_toLeftOf="@id/img_user_verified"
+            app:layout_constraintTop_toTopOf="@id/img_user_avatar_container"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintWidth_max="wrap"
+            app:layout_constraintWidth_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/img_user_verified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/chat_user_is_verified_description"
+            android:src="@drawable/verified_icon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/txt_user_name"
+            app:layout_constraintLeft_toRightOf="@id/txt_user_name"
+            app:layout_constraintTop_toTopOf="@id/txt_user_name" />
+
+        <ImageView
+            android:id="@+id/img_is_muted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/chat_is_currently_muted_description"
+            android:src="@drawable/mute_icon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/img_user_verified"
+            app:layout_constraintLeft_toRightOf="@id/img_user_verified"
+            app:layout_constraintTop_toTopOf="@id/img_user_verified" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/img_is_scam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txt_user_name"
+            app:layout_constraintLeft_toRightOf="@id/txt_user_name"
+            app:layout_constraintTop_toTopOf="@id/txt_user_name"
+            app:strokeColor="@color/color_attention"
+            app:strokeWidth="1dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:src="@drawable/mute_icon"
+                android:text="@string/chat_badge_scam"
+                android:textColor="@color/color_attention"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/img_user_verified"
+                app:layout_constraintLeft_toRightOf="@id/img_user_verified"
+                app:layout_constraintTop_toTopOf="@id/img_user_verified" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/txt_user_name_2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/chat_user_name2_placeholder"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@id/txt_user_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_name" />
+
+
+        <ImageView
+            android:id="@+id/img_last_message_attachment"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/preview_18dp"
+            app:layout_constraintLeft_toLeftOf="@id/txt_user_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_name_2" />
+
+        <TextView
+            android:id="@+id/txt_last_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="1"
+            android:text="@string/chat_message_last_placeholder"
+            android:textColor="@color/color_less_attention"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@id/img_last_message_attachment"
+            app:layout_constraintRight_toLeftOf="@id/img_badge_right_container"
+            app:layout_constraintTop_toBottomOf="@id/txt_user_name_2"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_last_message_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:paddingStart="0dp"
+            android:paddingEnd="10dp"
+            android:text="@string/chat_date_last_placeholder"
+            android:textColor="@color/color_less_attention"
+            app:layout_constraintRight_toRightOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/container" />
+
+
+        <ImageView
+            android:id="@+id/img_is_sent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/check_icon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/txt_last_message_time"
+            app:layout_constraintRight_toLeftOf="@id/txt_last_message_time"
+            app:layout_constraintTop_toTopOf="@id/txt_last_message_time" />
+
+        <ImageView
+            android:id="@+id/img_is_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/read_icon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/txt_last_message_time"
+            app:layout_constraintRight_toLeftOf="@id/txt_last_message_time"
+            app:layout_constraintTop_toTopOf="@id/txt_last_message_time" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_badge_right_container"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/color_accent_main"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintRight_toRightOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/txt_last_message_time">
+
+            <TextView
+                android:id="@+id/txt_badge_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:text="@string/chat_badge_right_description"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintRight_toRightOf="@id/container"
+                app:layout_constraintTop_toBottomOf="@id/txt_last_message_time" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

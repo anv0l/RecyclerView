@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RecyclerView</string>
+    <string name="chat_swipe_to_archive">Archive</string>
+    <string name="chat_user_avatar_description">User\'s avatar</string>
+    <string name="chat_is_voip">This is VOIP</string>
+    <string name="chat_user_name_placeholder">User name placeholder that can be quite long</string>
+    <string name="chat_user_is_verified_description">User is verified</string>
+    <string name="chat_is_currently_muted_description">Chat is currently muted</string>
+    <string name="chat_badge_right_description">\@</string>
+    <string name="chat_date_last_placeholder">May 02</string>
+    <string name="chat_message_last_placeholder">Last message received that can also can be very long and for that we\'re gonna use elipssisisisede</string>
+    <string name="chat_user_name2_placeholder">user name 2?</string>
+    <string name="chat_badge_scam">SCAM</string>
 </resources>
