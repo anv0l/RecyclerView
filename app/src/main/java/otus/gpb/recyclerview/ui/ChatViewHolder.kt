@@ -15,7 +15,7 @@ import kotlin.math.abs
 class ChatViewHolder(private val binding: VhChatsBinding) :
     RecyclerView.ViewHolder(binding.root) {
 
-    var id: Int = -1;
+    var id: Int = -1
 
     private fun Boolean.setViewVisibility(): Int {
         return if (this) View.VISIBLE else View.GONE

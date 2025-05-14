@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 import otus.gpb.recyclerview.data.ChatRepository
 import otus.gpb.recyclerview.data.ChatViewModel
 import otus.gpb.recyclerview.data.initDB
-import otus.gpb.recyclerview.data.loadMoreChatsFromDB
 import otus.gpb.recyclerview.ui.ChatItemDecorator
 import otus.gpb.recyclerview.ui.ChatItemTouchHelper
 import otus.gpb.recyclerview.ui.ChatListAdapter

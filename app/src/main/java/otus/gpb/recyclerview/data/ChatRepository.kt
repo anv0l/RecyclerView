@@ -30,7 +30,7 @@ class ChatRepository {
         }
     }
 
-    suspend fun loadMoreChats() {
+    fun loadMoreChats() {
         if (_allChats.value.size < getChatsCount()) {
             _page.update { it + 1 }
             _allChats.update { chats -> chats + loadMoreChatsFromDB(_page.value) }

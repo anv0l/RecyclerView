@@ -43,7 +43,7 @@ data class Chat(
             else {
                 val diff = Duration.between(timeLast, Instant.now()).abs()
                 val dateTimeWithTimeZone = timeLast!!.atZone(ZoneId.systemDefault())
-                val formatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)
+                DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)
                     .withLocale(Locale.getDefault())
                 when {
                     diff.toHours() < 24 -> {

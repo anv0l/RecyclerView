@@ -27,6 +27,7 @@
             android:id="@+id/img_swipe_reveal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
             android:src="@drawable/archive"
             app:layout_constraintBottom_toTopOf="@id/guideline_reveal_container"
             app:layout_constraintLeft_toLeftOf="@id/txt_swipe_reveal"
