@@ -7,15 +7,13 @@ private val users = mutableSetOf<User>() // all users on a platform
 
 val friendList = mutableSetOf<User>()    // added as friends
 
-//val allChats: List<Chat> = emptyList()
 private val chatDB: MutableList<Chat> = emptyList<Chat>().toMutableList()
 
 /**
  * acts as database:
- * - generate all chats, sort by time (init mock database)
- * - in main activity load first page (slice of first pageSize records
- * - when scrolling, load next page.
- * - probably store current page in the repository
+ * - generates all chats, sorts by time (init mock database)
+ * - in main activity loads first page (slice of first pageSize records
+ * - when scrolling, loads next page.
  */
 
 private const val userCount = 100
